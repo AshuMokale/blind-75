@@ -8,8 +8,9 @@ package arraysAndHashing;
  */
 public class LongestCommonPrefix {
 	public static void main(String[] args) {
-		// String[] strings = { "flower", "flow", "flight" };
-		String[] strings = { "dog", "racecar", "car" };
+		String[] strings = { "flower", "", "flight" };
+		// String[] strings = { "longestcommonprefix","longestcommon","longest" };
+		// String[] strings = { "dog", "racecar", "car" };
 		var result = new LongestCommonPrefix().longestCommonPrefix(strings);
 		System.out.println(result);
 	}
@@ -18,7 +19,7 @@ public class LongestCommonPrefix {
 		StringBuilder result = new StringBuilder("");
 		for (int i = 0; i < strings[0].length(); i++) {
 			for (String str : strings) {
-				if (i == strings[0].length() || str.charAt(i) != strings[0].charAt(i)) {
+				if (i == str.length() || str.charAt(i) != strings[0].charAt(i)) {
 					return new String(result);
 				}
 			}
